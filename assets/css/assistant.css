@@ -1,0 +1,48 @@
+*{box-sizing:border-box}
+:root{--bg:#eef2f5;--panel:#fff;--text:#14212b;--muted:#6c7882;--line:#dce3e8;--accent:#1677c8;--dark:#101820}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif}
+a{color:var(--accent)}
+button,textarea{font:inherit}
+.demoPage{max-width:1180px;margin:0 auto;padding:64px 24px}
+.productCard{display:grid;grid-template-columns:1fr 1fr;gap:48px;background:#fff;border:1px solid var(--line);border-radius:24px;padding:40px}
+.productVisual{display:flex;align-items:center;justify-content:center;min-height:440px;background:#e5ebef;border-radius:18px}
+.productMock{width:78%;max-width:420px}
+.productMock .lid{height:44px;background:#b9c4cc;border:2px solid #7d8a93;border-radius:10px 10px 2px 2px;box-shadow:0 16px 26px rgba(20,33,43,.16)}
+.productMock .base{width:88%;height:150px;margin:0 auto;background:#cad3d9;border:2px solid #8c979f;border-top:0}
+.eyebrow{display:inline-block;margin-bottom:14px;font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--muted)}
+.productInfo h1{font-size:42px;line-height:1.08;margin:0 0 18px}
+.lead{font-size:18px;line-height:1.55;color:#44515a}
+.specs{margin:30px 0;border-top:1px solid var(--line)}
+.specs div{display:flex;justify-content:space-between;gap:20px;padding:14px 0;border-bottom:1px solid var(--line)}
+.specs dt{color:var(--muted)}
+.specs dd{margin:0;font-weight:700}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.requestQuote,.aiConsultantButton{display:flex;align-items:center;justify-content:center;min-height:50px;border-radius:10px;text-decoration:none;font-weight:700;cursor:pointer}
+.requestQuote{background:var(--dark);color:#fff}
+.aiConsultantButton{border:0;background:var(--accent);color:#fff}
+.note{font-size:13px;color:var(--muted);line-height:1.5}
+.aboutDemo{padding:48px 0 0;max-width:780px}
+.aboutDemo h2{font-size:28px}
+.aboutDemo p{font-size:17px;line-height:1.6}
+.assistantOverlay{position:fixed;inset:0;background:rgba(9,17,24,.38);z-index:9998}
+.assistantPanel{position:fixed;right:22px;bottom:22px;width:min(420px,calc(100vw - 24px));height:min(680px,calc(100vh - 44px));background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 24px 80px rgba(8,20,30,.28);z-index:9999;display:flex;flex-direction:column;overflow:hidden;transform:translateY(24px);opacity:0;pointer-events:none;transition:.2s ease}
+.assistantPanel.open{transform:none;opacity:1;pointer-events:auto}
+.assistantHeader{display:flex;align-items:center;justify-content:space-between;padding:18px 18px 16px;border-bottom:1px solid var(--line)}
+.assistantHeader strong{display:block}
+.assistantHeader small{display:block;margin-top:4px;color:var(--muted)}
+.assistantClose{width:36px;height:36px;border:0;background:#f0f3f5;border-radius:50%;font-size:24px;cursor:pointer}
+.assistantMessages{flex:1;overflow:auto;padding:18px;background:#f7f9fa}
+.message{max-width:84%;margin:0 0 12px;padding:12px 14px;border-radius:14px;white-space:pre-wrap;line-height:1.45}
+.message.assistant{background:#fff;border:1px solid var(--line);border-bottom-left-radius:4px}
+.message.user{margin-left:auto;background:var(--accent);color:#fff;border-bottom-right-radius:4px}
+.messageTime{display:block;margin-top:7px;font-size:10px;opacity:.58}
+.typing{padding:0 18px 12px;background:#f7f9fa}
+.typing span{display:inline-block;width:7px;height:7px;margin-right:4px;border-radius:50%;background:#81909a;animation:blink 1.2s infinite}
+.typing span:nth-child(2){animation-delay:.15s}.typing span:nth-child(3){animation-delay:.3s}
+@keyframes blink{0%,80%,100%{opacity:.25}40%{opacity:1}}
+.assistantForm{display:grid;grid-template-columns:1fr auto;gap:10px;padding:14px;border-top:1px solid var(--line)}
+.assistantForm textarea{resize:none;max-height:120px;border:1px solid #cfd8de;border-radius:10px;padding:12px;outline:none}
+.assistantForm textarea:focus{border-color:var(--accent)}
+.assistantForm button{border:0;border-radius:10px;padding:0 16px;background:var(--accent);color:#fff;font-weight:700;cursor:pointer}
+.assistantAcceptance{padding:0 14px 14px;font-size:11px;line-height:1.4;color:var(--muted)}
+@media(max-width:800px){.demoPage{padding:20px 12px}.productCard{grid-template-columns:1fr;padding:20px;gap:24px}.productVisual{min-height:270px}.productInfo h1{font-size:30px}.actions{grid-template-columns:1fr}.assistantPanel{right:12px;bottom:12px;height:calc(100vh - 24px)}}

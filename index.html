@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>MetalVal AI Assistant Demo</title>
+    <link rel="stylesheet" href="/assets/css/assistant.css">
+</head>
+<body>
+
+<main class="demoPage">
+    <section class="productCard">
+        <div class="productVisual">
+            <div class="productMock">
+                <div class="lid"></div>
+                <div class="base"></div>
+            </div>
+        </div>
+
+        <div class="productInfo">
+            <span class="eyebrow">DEMO PRODUCT CARD</span>
+            <h1>Инспекционный люк топливного резервуара 1110×900</h1>
+
+            <p class="lead">
+                Демонстрационная карточка промышленного изделия с встроенным B2B AI-консультантом.
+            </p>
+
+            <dl class="specs">
+                <div><dt>Производство</dt><dd>по заказу</dd></div>
+                <div><dt>Цена</dt><dd>по запросу</dd></div>
+                <div><dt>Размер</dt><dd>1110×900 мм</dd></div>
+                <div><dt>Покрытие</dt><dd>RAL по ТЗ</dd></div>
+            </dl>
+
+            <div class="actions">
+                <a class="requestQuote" href="#quote">Запросить КП</a>
+
+                <button
+                    type="button"
+                    class="aiConsultantButton"
+                    id="aiAssistantOpen"
+                    aria-expanded="false"
+                >AI-консультант</button>
+            </div>
+
+            <p class="note">
+                Переписка сохраняется для обработки обращений.
+                <a href="#offer">Условия оферты</a>
+            </p>
+        </div>
+    </section>
+
+    <section class="aboutDemo">
+        <h2>Что демонстрирует проект</h2>
+        <p>
+            Ассистент уточняет технические параметры заказа и переводит консультацию
+            в структурированный лид без публикации внутренних цен и production-логики.
+        </p>
+    </section>
+</main>
+
+<div class="assistantOverlay" id="assistantOverlay" hidden></div>
+
+<aside class="assistantPanel" id="assistantPanel" aria-hidden="true">
+    <div class="assistantHeader">
+        <div>
+            <strong>Консультация по выбору</strong>
+            <small>MetalVal AI Assistant Demo</small>
+        </div>
+
+        <button type="button" class="assistantClose" id="assistantClose" aria-label="Закрыть">×</button>
+    </div>
+
+    <div class="assistantMessages" id="assistantMessages" aria-live="polite"></div>
+
+    <div class="typing" id="assistantTyping" hidden>
+        <span></span><span></span><span></span>
+    </div>
+
+    <form class="assistantForm" id="assistantForm">
+        <textarea
+            id="assistantInput"
+            rows="1"
+            maxlength="1000"
+            placeholder="Введите сообщение..."
+            aria-label="Сообщение"
+        ></textarea>
+
+        <button type="submit" id="assistantSend">Отправить</button>
+    </form>
+
+    <div class="assistantAcceptance">
+        Переписка сохраняется для обработки обращений.
+        <a href="#offer">Условия оферты</a>
+    </div>
+</aside>
+
+<script>
+window.METALVAL_ASSISTANT_CONTEXT = {
+    product: {
+        title: "Инспекционный люк топливного резервуара 1110×900",
+        category: "Промышленные люки",
+        dimensions: "1110×900 мм",
+        page: window.location.pathname
+    }
+};
+</script>
+
+<script src="/assets/js/assistant.js"></script>
+</body>
+</html>
